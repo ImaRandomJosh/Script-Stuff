@@ -1,0 +1,16 @@
+#!/bin/bash
+macros=""
+
+if [ "$1" ]; then
+    macros="$macros -D$1"
+fi
+
+if [ "$2" ]; then
+    macros="$macros -D$2"
+fi
+
+if [ "$3" ]; then
+    macros="$macros -D$3"
+fi
+
+clang $macros main.c *.o -o viewer
